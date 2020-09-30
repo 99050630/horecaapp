@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang='NL'>
+    <head>
+        <link rel="stylesheet" href="style/style.css">
+        <title>Cafe & Bar - Puzzles</title>
+        <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
+        <script src="script/script.js"></script>
+    </head>
+    <body>
+        <h1>Cafe & Bar - Puzzles</h1>
+        <div class="item_container">
+            <div onclick="showaddMenu('drank');" id="drank_item" class="item">
+                <h3>Dranken</h3>
+            </div>
+            <div onclick="showaddMenu('snack');" id="snack_item" class="item">
+                <h3>Snacks</h3>
+            </div>
+        </div>
+        <div id="addMenu">
+            <p>Wat en hoeveel wil je toevoegen?</p>
+            <select name='soort' id='soort'>
+                <option value='0'></option>
+                <option value='fris'>Fris</option>
+                <option value='bier'>Bier</option>
+                <option value='wijn'>Wijn</option>
+            </select>
+            <input type='text' id='aantal' name='aantal' placeholder='Aantal'>
+            <button onclick='addOrder(document.getElementById("soort").value, document.getElementById("aantal").value);'>Voeg toe</button>
+            <button onclick='showBill();'>Rekening</button>
+        </div>
+        <div id="addMenu2">
+            <p>Wat en hoeveel wil je toevoegen?</p>
+            <select name='soort' id='soort2'>
+                <option value='0'></option>
+                <option value='bitterballen'>Bitterballen</option>
+            </select>
+            <select name='aantal' id='aantal2'>
+                <option value='0'></option>
+                <option value='8'>8</option>
+                <option value='16'>16</option>
+            </select>
+            <button onclick='addOrder(document.getElementById("soort2").value, document.getElementById("aantal2").value);'>Voeg toe</button>
+            <button onclick='showBill();'>Rekening</button>
+        </div>
+        <div id="bill">
+            <p id="bill_text"></p>
+            <p id='totaal'></p>
+            <button onclick="reset();">Afrekenen</button>
+        </div>
+    </body>
+</html>
